@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>BAGISCILAR KAYIT SAYFASI</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Kayit Sayfasi</h3>
+		<table id="myTable">
+			<tr>
+				<td>Isim :</td>
+				<td><h:inputText id="name" value="#{humanManagedBean.name}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Soyad :</td>
+				<td><h:inputText id="surname"
+						value="#{humanManagedBean.surname}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>e-posta :</td>
+				<td><h:inputText id="e-posta"
+						value="#{humanManagedBean.eposta}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Kan Grubu :</td>
+				<td><h:inputText id="kangrubu"
+						value="#{humanManagedBean.kanGrubu}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Telefon :</td>
+				<td><h:inputText id="telefon"
+						value="#{humanManagedBean.telefon}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Adres :</td>
+				<td><h:inputText id="adres" value="#{humanManagedBean.adres}"></h:inputText></td>
+
+			</tr>
+
+
+		</table>
+		<p>
+			<h:commandButton value="BİLGİLERİ EKLE"
+				action="#{humanManagedBean.getAddHuman}">
+
+			</h:commandButton>
+		</p>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Login Sayfası</title>
+</head>
+<h:body>
+	<h:form id="LoginForm">
+		<center>
+			<h2>Login Sayfası</h2>
+			<br></br>
+			<table>
+				<tr>
+					<td><h:outputLabel for="input1">
+							<h:outputText id="nameLabel" value="User Name" />
+						</h:outputLabel></td>
+					<td><h:inputText id="input1"
+							value="#{humanManagedBean.kullanıcıAdı}" size="20" /></td>
+				</tr>
+				<tr>
+					<td><h:outputLabel for="input2">
+							<h:outputText id="passwordLabel" value="Password" />
+						</h:outputLabel></td>
+					<td><h:inputSecret id="input2"
+							value="#{humanManagedBean.password}" size="20" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><h:commandButton id="logon"
+							action="#{humanManagedBean.login}" value="login">
+						</h:commandButton></td>
+				</tr>
+			</table>
+		</center>
+
+	</h:form>
+
+</h:body>
+</html>

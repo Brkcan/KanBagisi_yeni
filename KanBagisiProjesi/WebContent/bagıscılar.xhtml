@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>BAGIŞCILAR KAYIT SAYFASI</title>
+</h:head>
+<h:body>
+	<h:form id="form">
+		<p:growl id="msgs" showDetail="true" />
+
+		<p:dataTable id="eventsDT" var="myHuman"
+			value="#{humanManagedBean.humanss}" selectionMode="single"
+			selection="#{humanManagedBean.humans}" rowKey="#{myHuman.id}">
+			<f:facet name="header">
+            Bagışcılar Bilgisi
+        </f:facet>
+			<p:ajax event="rowSelect" listener="#{humanManagedBean.onRowSelect}"
+				update=":form:msgs" />
+			<p:ajax event="rowUnselect"
+				listener="#{humanManagedBean.onRowUnselect}" update=":form:msgs" />
+			<p:column headerText="id">
+				<h:outputText value="#{muHuman.id}" />
+			</p:column>
+			<p:column headerText="Name">
+				<h:outputText value="#{myHuman.name}" />
+			</p:column>
+			<p:column headerText="Soyad">
+				<h:outputText value="#{myHuman.surname}" />
+			</p:column>
+			<p:column headerText="eposta">
+				<h:outputText value="#{myHuman.eposta}" />
+			</p:column>
+			<p:column headerText="kanGrubu">
+				<h:outputText value="#{myHuman.kanGrubu}" />
+			</p:column>
+			<p:column headerText="Telefon">
+				<h:outputText value="#{myHuman.telefon}" />
+			</p:column>
+			<p:column headerText="Adres">
+				<h:outputText value="#{myHuman.adres}" />
+			</p:column>
+		</p:dataTable>
+
+
+		<p:dialog header="Selected Cars" widgetVar="multiCarDialog"
+			modal="true" showEffect="fade" hideEffect="fade" resizable="false"
+			width="220">
+			<p:outputPanel id="multiCarDetail" style="text-align:center;">
+				<ui:repeat value="#{humanManagedBean.humanss}" var="myHuman">
+					<h:outputText value="#{myHuman.name}" style="display:block" />
+				</ui:repeat>
+			</p:outputPanel>
+		</p:dialog>
+	</h:form>
+
+
+
+
+
+
+</h:body>
+</html>

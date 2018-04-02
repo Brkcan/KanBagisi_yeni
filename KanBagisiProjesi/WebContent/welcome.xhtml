@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>KullanıcıAdı Ve Password</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h1>Giris için kullanıcı adınız ve şifreniz</h1>
+
+
+		<br></br>
+		<h:dataTable value="#{humanManagedBean.humanss}" var="myHuman"
+			captionStyle="font-size:20px" styleClass="employee-table"
+			headerClass="employee-table-header"
+			rowClasses="employee-table-oddRow,employee-table-evenRow">
+			<f:facet name="caption">Bilgiler listesi</f:facet>
+			<h:column>
+				<f:facet name="header">İsim</f:facet>
+		#{myHuman.name}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Soyisim</f:facet>
+		#{myHuman.surname}
+		</h:column>
+			<h:column>
+				<f:facet name="header">E-posta</f:facet>
+		#{myHuman.eposta}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Kan Grubu</f:facet>
+		#{myHuman.kanGrubu}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Telefon</f:facet>
+		#{myHuman.telefon}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Adres</f:facet>
+		#{myHuman.adres}
+		</h:column>
+
+		</h:dataTable>
+
+		<h:dataTable value="#{humanManagedBean.logins}" var="myLogin">
+			<h:column>
+				<f:facet name="header">Kullanıcı Adı</f:facet>
+			#{myLogin.kullanıcıAdı}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Sifre</f:facet>
+			#{myLogin.password}
+		</h:column>
+		</h:dataTable>
+
+		<h:commandButton value="Login olmak tıklayınız"
+			action="login.xhtml"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

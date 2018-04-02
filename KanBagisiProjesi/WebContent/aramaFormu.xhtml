@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>BAGIŞCILAR KAYIT SAYFASI</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Kayıt Sayfası</h3>
+		<table id="myTable">
+			<tr>
+				<td>İsim :</td>
+				<td><h:inputText id="name" value="#{bloodManagerBean.name}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Soyad :</td>
+				<td><h:inputText id="surname"
+						value="#{bloodManagerBean.surname}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Kan grubu :</td>
+				<td><h:inputText id="Kangrubu"
+						value="#{bloodManagerBean.kanGrubu}"></h:inputText></td>
+			</tr>
+
+		</table>
+		<p>
+			<h:commandButton value="Bilgileri kaydet"
+				action="#{bloodManagerBean.addBloodDonation}">
+			</h:commandButton>
+		</p>
+		
+		
+	</h:form>
+</h:body>
+</html>
