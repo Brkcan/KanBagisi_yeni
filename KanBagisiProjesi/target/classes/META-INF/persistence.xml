@@ -27,8 +27,7 @@
 	<persistence-unit name="EmployeePersistenceUnitForHibernate"
 		transaction-type="RESOURCE_LOCAL">
 
-		<!-- Hibernate JPA implemantasyonu icin provider eklenmesi GEREKLIDIR! 
-			class tag'ina gerek YOKTUR! varsayilan provider; org.eclipse.persistence.jpa.PersistenceProvider -->
+	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<properties>

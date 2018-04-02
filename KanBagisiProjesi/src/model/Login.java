@@ -13,23 +13,23 @@ public class Login {
 	@GeneratedValue(generator = "Login_ID")
 	private int id;
 
-	private String kullanýcýAdý;
+	private String kullaniciAdi;
 	private String password;
 
-	public Login(String kullanýcýAdý, String password) {
-		this.kullanýcýAdý = kullanýcýAdý;
+	public Login(String kullaniciAdi, String password) {
+		this.kullaniciAdi = kullaniciAdi;
 		this.password = password;
 	}
 
 	public Login() {
 	}
 
-	public String getKullanýcýAdý() {
-		return kullanýcýAdý;
+	public String getKullaniciAdi() {
+		return kullaniciAdi;
 	}
 
-	public void setKullanýcýAdý(String kullanýcýAdý) {
-		this.kullanýcýAdý = kullanýcýAdý;
+	public void setKullaniciAdi(String kullaniciAdi) {
+		this.kullaniciAdi = kullaniciAdi;
 	}
 
 	public String getPassword() {

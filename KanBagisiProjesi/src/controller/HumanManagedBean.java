@@ -8,16 +8,12 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.persistence.PreRemove;
 
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.UnselectEvent;
 
-import dao.BloodDonationDAO;
-import dao.BloodDonationDAOImpl;
 import dao.HumanDAO;
 import dao.HumanDAOImpl;
-import model.BloodDonation;
 import model.Human;
 import model.Login;
 
@@ -31,7 +27,7 @@ public class HumanManagedBean {
 	private String kanGrubu;
 	private String telefon;
 	private String adres;
-	private String kullanýcýAdý;
+	private String kullaniciAdi;
 	private String password;
 	private Login login;
 	private List<Human> humanss;
@@ -87,12 +83,12 @@ public class HumanManagedBean {
 		this.humanss = humanss;
 	}
 
-	public String getKullanýcýAdý() {
-		return kullanýcýAdý;
+	public String getKullaniciAdi() {
+		return kullaniciAdi;
 	}
 
-	public void setKullanýcýAdý(String kullanýcýAdý) {
-		this.kullanýcýAdý = kullanýcýAdý;
+	public void setKullaniciAdi(String kullanýcýAdý) {
+		this.kullaniciAdi = kullanýcýAdý;
 	}
 
 	public String getPassword() {
@@ -210,8 +206,8 @@ public class HumanManagedBean {
 		HumanDAO humanDAO = new HumanDAOImpl();
 		Login user = new Login();
 		try {
-			user = humanDAO.getLogin(kullanýcýAdý, password);
-			if (kullanýcýAdý.equalsIgnoreCase(user.getKullanýcýAdý()) && password.equals(user.getPassword())) {
+			user = humanDAO.getLogin(kullaniciAdi, password);
+			if (kullaniciAdi.equalsIgnoreCase(user.getKullaniciAdi()) && password.equals(user.getPassword())) {
 				return "success";
 			}
 		} catch (Exception e) {

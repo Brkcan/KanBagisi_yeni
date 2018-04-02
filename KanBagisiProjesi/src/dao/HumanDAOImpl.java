@@ -61,11 +61,11 @@ public class HumanDAOImpl implements HumanDAO {
 	}
 
 	@Override
-	public Login getLogin(String kullanýcýAdý, String password) {
+	public Login getLogin(String kullaniciAdi, String password) {
 
 		Query q = entityManager
-				.createQuery("SELECT u FROM Login u WHERE u.kullanýcýAdý = :login AND u.password = :pass");
-		q.setParameter("login", kullanýcýAdý);
+				.createQuery("SELECT u FROM Login u WHERE u.kullaniciAdi = :login AND u.password = :pass");
+		q.setParameter("login", kullaniciAdi);
 		q.setParameter("pass", password);
 
 		return (Login) q.getSingleResult();

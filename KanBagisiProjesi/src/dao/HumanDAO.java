@@ -17,7 +17,7 @@ public interface HumanDAO {
 	
 	public List<Login> logins();
 	
-	public Login getLogin(String kullanýcýAdý, String password);
+	public Login getLogin(String kullaniciAdi, String password);
 	
 	public void removeHuman(int id);
 	
