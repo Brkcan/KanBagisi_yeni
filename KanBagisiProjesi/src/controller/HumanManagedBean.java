@@ -87,8 +87,8 @@ public class HumanManagedBean {
 		return kullaniciAdi;
 	}
 
-	public void setKullaniciAdi(String kullanýcýAdý) {
-		this.kullaniciAdi = kullanýcýAdý;
+	public void setKullaniciAdi(String kullaniciAdi) {
+		this.kullaniciAdi = kullaniciAdi;
 	}
 
 	public String getPassword() {
@@ -197,7 +197,7 @@ public class HumanManagedBean {
 		if (name != null && surname != null && kanGrubu != null) {
 			return "success";
 		}
-		return "Kullanýcý Adý = " + kod + " " + "Sifreniz  : " + password;
+		return "Kullanici Adi = " + kod + " " + "Sifreniz  : " + password;
 
 	}
 
